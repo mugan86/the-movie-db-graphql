@@ -6,6 +6,7 @@ import schema from "./schema";
 import { ApolloServer } from "apollo-server-express";
 import { createServer } from "http";
 import environments from "./config/environments";
+import { dataSources } from "./data";
 import expressPlayGround from "graphql-playground-middleware-express";
 async function init() {
     // Inicializar variables de entorno
@@ -29,6 +30,7 @@ async function init() {
         dataSources: ()  => ({
             // Aquí vamos a añadir las fuentes de los datos que usaremos
             // para coger la información de la API TheMovieDB
+            people: new dataSources.People()
         })
     });
 
