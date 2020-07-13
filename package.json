@@ -4,7 +4,10 @@
   "description": "Convert from REST API to GraphQL from The MovieDB API",
   "main": "build/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node build/server.js",
+    "build": "tsc -p . && ncp src/schema build/schema",
+    "dev": "npm run build:dev",
+    "build:dev": "nodemon \"src/server.ts\" --exec \"ts-node\" src/server.ts -e ts,graphql,json"
   },
   "repository": {
     "type": "git",

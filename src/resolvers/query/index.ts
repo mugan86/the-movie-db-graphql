@@ -2,7 +2,7 @@ import { IResolvers } from "graphql-tools";
 
 const queryResolvers: IResolvers = {
     Query: {
-        hello: "hello world"
+        hello: () => "hello world"
     }
 }
 
