@@ -2,7 +2,11 @@ import { IResolvers } from "graphql-tools";
 
 const queryResolvers: IResolvers = {
     Query: {
-        hello: () => "hello world"
+        hello: async(_, __, { dataSources}) => {
+            const peoplePopular = await dataSources.people.getPopular(1);
+            console.log(peoplePopular);
+            return "hello world";
+        }
     }
 }
 
