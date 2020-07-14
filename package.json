@@ -1,6 +1,6 @@
 {
   "name": "the-movie-db-graphql",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Convert from REST API to GraphQL from The MovieDB API",
   "main": "build/server.js",
   "scripts": {
