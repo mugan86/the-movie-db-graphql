@@ -40,11 +40,11 @@ Adaptación de la API TheMovieDB de una API Rest a una API de tipo GraphQL. Se i
 ## Testing
 
 ### Schema GraphQL
-* [ ] Géneros
+* [x] Géneros
 * [ ] Descubrimientos
 
 ### Resolvers
-* [ ] Géneros
+* [x] Géneros
 * [ ] Descubrimientos
 
 ## Tools and references use to make conversion
