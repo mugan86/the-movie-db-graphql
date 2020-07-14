@@ -16,3 +16,8 @@ export enum LANGUAGES {
     RUSSIAN = "ru",
     SPANISH = "es",
 }
+
+export enum AUDIOVISUAL_TYPE {
+    MOVIE = "movie",
+    TV = "tv"
+}
