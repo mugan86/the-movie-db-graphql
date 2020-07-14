@@ -1,0 +1,15 @@
+type Tv {
+  id: Int!
+  originalName: String
+  genreIds: [Int]
+  name: String
+  popularity: Float
+  originCountry: [String]
+  voteCount: Int
+  firstAirDate: String
+  backdropPath: String
+  originalLanguage: String
+  voteAverage: Float
+  overview: String
+  posterPath: String
+}

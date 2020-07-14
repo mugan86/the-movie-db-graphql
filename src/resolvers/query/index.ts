@@ -1,10 +1,13 @@
-import { IResolvers } from "graphql-tools";
 import queryGenreResolvers from "./genre";
 import queryDiscoverResolvers from "./discover";
+import GMR from "graphql-merge-resolvers";
 
-const queryResolvers: IResolvers = {
-    ...queryGenreResolvers,
-    ...queryDiscoverResolvers
-}
+
+const queryResolvers = GMR.merge(
+    [
+        queryGenreResolvers,
+        queryDiscoverResolvers
+    ]
+);
 
 export default queryResolvers;

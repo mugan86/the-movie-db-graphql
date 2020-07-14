@@ -1,0 +1,22 @@
+{
+  discoverMovie {
+    page
+    totalPages
+    totalResults
+    movies {
+      id
+      originalLanguage
+      genreIds
+      title
+      popularity
+      video
+      adult
+      voteCount
+      backdropPath
+      voteAverage
+      posterPath
+      overview
+      releaseDate
+    }
+  }
+}

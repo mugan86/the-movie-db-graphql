@@ -35,7 +35,8 @@ async function init() {
       // Aquí vamos a añadir las fuentes de los datos que usaremos
       // para coger la información de la API TheMovieDB
       people: new dataSources.People(defaultLanguage),
-      genre: new dataSources.Genre(defaultLanguage)
+      genre: new dataSources.Genre(defaultLanguage),
+      discover: new dataSources.Discover(defaultLanguage)
     }),
   });
 

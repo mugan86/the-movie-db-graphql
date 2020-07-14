@@ -1,0 +1,22 @@
+{
+  discoverTv {
+    page
+    totalPages
+    totalResults
+    tvShows {
+      id
+      originalName
+      originCountry
+      originalLanguage
+      genreIds
+      name
+      popularity
+      voteCount
+      firstAirDate
+      backdropPath
+      voteAverage
+      posterPath
+      overview
+    }
+  }
+}

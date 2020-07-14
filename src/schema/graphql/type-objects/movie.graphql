@@ -1,0 +1,16 @@
+type Movie {
+  id: Int!
+  popularity: Float
+  voteCount: Int
+  video: Boolean
+  adult: Boolean
+  posterPath: String
+  backdropPath: String
+  originalLanguage: String
+  genreIds: [Int]
+  title: String
+  voteAverage: Float
+  overview: String
+  releaseDate: String
+}
+

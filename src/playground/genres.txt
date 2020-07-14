@@ -1,0 +1,10 @@
+{
+  genresTV {
+    id
+    name
+  }
+  genresMovie {
+    id
+    name
+  }
+}

@@ -1,0 +1,7 @@
+type ResultDiscover implements ResultPagination {
+    page: Int
+    totalResults: Int
+    totalPages: Int
+    movies: [Movie!]
+    tvShows: [Tv!]
+}

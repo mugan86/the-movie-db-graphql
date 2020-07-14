@@ -1,0 +1,5 @@
+interface ResultPagination {
+    page: Int
+    totalResults: Int
+    totalPages: Int
+}

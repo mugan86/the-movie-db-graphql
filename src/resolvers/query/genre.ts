@@ -9,11 +9,7 @@ const queryGenreResolvers: IResolvers = {
         genresTV: async(_, __, { dataSources}) => {
             return await (dataSources.genre.list(AUDIOVISUAL_TYPE.TV));
         },
-        hello: async(_, __, { dataSources}) => {
-            const peoplePopular = await dataSources.people.getPopular(1);
-            console.log(peoplePopular);
-            return "hello world";
-        }
+        hello: () => "hello world"
     }
 }
 
