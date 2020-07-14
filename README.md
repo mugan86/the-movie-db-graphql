@@ -14,11 +14,11 @@ Adaptation of TheMovieDB API from a Rest API to a GraphQL type API. They will be
 ## Testing
 
 ### Schema GraphQL
-* [ ] Genres
+* [x] Genres
 * [ ] Discover
 
 ### Resolvers
-* [ ] Genres
+* [x] Genres
 * [ ] Discover
 
 ## Tools and references use to make conversion
