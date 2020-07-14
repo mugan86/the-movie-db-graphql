@@ -1,0 +1,31 @@
+type Movie {
+  id: Int!
+  popularity: Int
+  vote_count: Int
+  video: Boolean
+  adult: Boolean
+  poster_path: String
+  backdrop_path: String
+  original_language: String
+  genre_ids: [Int]
+  title: String
+  vote_average: String
+  overview: String
+  release_date: String
+}
+
+type Tv {
+  id: Int!
+  original_name: String
+  genre_ids: [Int]
+  name: String
+  popularity: Int
+  origin_country: [String]
+  vote_count: Int
+  first_air_date: String
+  backdrop_path: String
+  original_language: String
+  vote_average: Int
+  overview: String
+  poster_path: String
+}

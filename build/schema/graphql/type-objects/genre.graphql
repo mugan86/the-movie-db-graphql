@@ -1,0 +1,6 @@
+"Genre select to take depending select movie / tv show"
+type Genre {
+    id: Int!
+    "Genre name"
+    name: String
+}
