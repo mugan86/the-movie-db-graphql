@@ -1,13 +1,8 @@
 import { IResolvers } from "graphql-tools";
+import queryGenreResolvers from "./genre";
 
 const queryResolvers: IResolvers = {
-    Query: {
-        hello: async(_, __, { dataSources}) => {
-            const peoplePopular = await dataSources.people.getPopular(1);
-            console.log(peoplePopular);
-            return "hello world";
-        }
-    }
+    ...queryGenreResolvers
 }
 
 export default queryResolvers;
