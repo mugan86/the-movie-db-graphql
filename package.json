@@ -22,6 +22,12 @@
     "apollo-rest-datasource"
   ],
   "author": "Anartz Mugika Ledo <mugan86@gmail.com>",
+  "contributors": [
+    {
+      "name": "Ruslan González",
+      "url": "https://github.com/ruslanguns"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mugan86/the-movie-db-graphql/issues"

@@ -8,7 +8,7 @@ const { mergeTypeDefs } = require('@graphql-tools/merge');
 const apiSchema = mergeTypeDefs(loadFilesSync(path.join(__dirname, './../src/schema/**/*.graphql')));
 
 // const tester =
-describe('Test Schema GraphQL', () => {
+describe('Test Schema GraphQL - Genres', () => {
 	let tester;
 	before(function() {
 		tester = new EasyGraphQLTester(apiSchema);
