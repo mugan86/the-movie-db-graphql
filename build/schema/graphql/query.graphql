@@ -1,7 +1,0 @@
-type Query {
-    hello: String!
-    genresMovie: [Genre!]!
-    genresTV: [Genre!]!
-    discoverMovie: [Movie!]!
-    discoverTv: [Tv!]!
-}
