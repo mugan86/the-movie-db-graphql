@@ -4,6 +4,7 @@ const EasyGraphQLTester = require('easygraphql-tester');
 const path = require('path');
 const { loadFilesSync } = require('@graphql-tools/load-files');
 const { mergeTypeDefs } = require('@graphql-tools/merge');
+const operations = require('./mocks/operations/genres');
 
 const apiSchema = mergeTypeDefs(loadFilesSync(path.join(__dirname, './../src/schema/**/*.graphql')));
 
@@ -34,14 +35,7 @@ describe('Test Schema GraphQL - Genres', () => {
 			tester.test(false, query, {});
 		});
 		it("Llamada 'genresTV' válida", () => {
-			const query = `
-                {
-                    genresTV {
-                        id
-                        name
-                    }
-                }
-            `;
+			const query = operations.GENRES_TV;
 			tester.test(true, query, {});
 		});
 		it("Llamada 'genresTV' inválida", () => {
@@ -53,14 +47,7 @@ describe('Test Schema GraphQL - Genres', () => {
 			tester.test(false, query, {});
 		});
 		it("Llamada 'genresMovie' válida", () => {
-			const query = `
-                {
-                    genresMovie {
-                        id
-                        name
-                    }
-                }
-            `;
+			const query  = operations.GENRES_MOVIE;
 			tester.test(true, query, {});
 		});
 		it("Llamada 'genresMovie' inválida", () => {

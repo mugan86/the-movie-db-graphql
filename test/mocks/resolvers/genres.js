@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const DATA = require('./../data/genres').GENRES_TV_MOVIE_LIST;
 const genresTV = () => DATA;
 const genresMovie = () => DATA

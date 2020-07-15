@@ -5,6 +5,8 @@ const path = require("path");
 const { loadFilesSync } = require("@graphql-tools/load-files");
 const { mergeTypeDefs } = require("@graphql-tools/merge");
 
+const operations = require('./mocks/operations/discover');
+
 const apiSchema = mergeTypeDefs(
   loadFilesSync(path.join(__dirname, "./../src/schema/**/*.graphql"))
 );
@@ -17,38 +19,14 @@ describe("Test Schema GraphQL - Discover", () => {
   });
   describe("Type Root: Query", () => {
     it("Llamada 'discoverMovie' válida", () => {
-      const query = `
-            {
-                discoverTv {
-                  page
-                  totalPages
-                  totalResults
-                  tvShows {
-                    id
-                    originalName
-                    originCountry
-                    originalLanguage
-                    genreIds
-                    name
-                    popularity
-                    voteCount
-                    firstAirDate
-                    backdropPath
-                    voteAverage
-                    posterPath
-                    overview
-                  }
-                }
-              }
-              
-            `;
+      const query = operations.DISCOVER_MOVIE;
       tester.test(true, query, {});
     });
     it("Llamada 'discoverMovie' inválida", () => {
       const query = `
                 {
                     {
-                        discoverTv {
+                        discoverMovie {
                             id
                             originalName
                             originCountry
@@ -69,30 +47,7 @@ describe("Test Schema GraphQL - Discover", () => {
       tester.test(false, query, {});
     });
     it("Llamada 'discoverTv' válida", () => {
-      const query = `
-        {
-            discoverTv {
-                page
-                totalPages
-                totalResults
-                tvShows {
-                    id
-                    originalName
-                    originCountry
-                    originalLanguage
-                    genreIds
-                    name
-                    popularity
-                    voteCount
-                    firstAirDate
-                    backdropPath
-                    voteAverage
-                    posterPath
-                    overview
-                }
-            }
-        }
-            `;
+      const query = operations.DISCOVER_TV;
       tester.test(true, query, {});
     });
     it("Llamada 'discoverTv' inválida", () => {
