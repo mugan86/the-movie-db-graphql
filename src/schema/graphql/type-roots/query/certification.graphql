@@ -1,0 +1,4 @@
+type Query {
+    certificationMovie: ResultCertification
+    certificationTv: ResultCertification
+}

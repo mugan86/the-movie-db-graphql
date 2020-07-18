@@ -1,0 +1,13 @@
+type Certification {
+    "Código del páis"
+    code: String!
+    details: [CertificationDetails!]!
+}
+
+type CertificationDetails {
+    "Tipo de certificado"
+    certification: String!
+    "descripción"
+    meaning: String!
+    order: Int!
+}
