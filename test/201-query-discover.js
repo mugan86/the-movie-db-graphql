@@ -23,7 +23,7 @@ function analyzeData (discoverData, tv) {
     
 }
 
-describe('Testing Resolvers - Type Root - Query - Genres', () => {
+describe('Testing Resolvers - Type Root - Query - Discover', () => {
 	let tester;
 	before(function() {
 		tester = new EasyGraphQLTester(apiSchema, resolvers);
