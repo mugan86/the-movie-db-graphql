@@ -8,7 +8,7 @@ Adaptation of TheMovieDB API from a Rest API to a GraphQL type API. They will be
 
 * [x] [Genres](https://developers.themoviedb.org/3/genres) - Anartz
 * [X] [Discover](https://developers.themoviedb.org/3/discover) - Ruslan
-* [ ] [Certifications](https://developers.themoviedb.org/3/certifications) - Anartz
+* [X] [Certifications](https://developers.themoviedb.org/3/certifications) - Anartz
 * [ ] [Changes](https://developers.themoviedb.org/3/changes) - Anartz
 
 ## Testing
@@ -16,13 +16,13 @@ Adaptation of TheMovieDB API from a Rest API to a GraphQL type API. They will be
 ### Schema GraphQL
 * [x] Genres
 * [X] Discover
-* [ ] Certifications
+* [X] Certifications
 * [ ] Changes
 
 ### Resolvers
 * [x] Genres
 * [X] Discover
-* [ ] Certifications
+* [X] Certifications
 * [ ] Changes
 
 ## Tools and references use to make conversion
@@ -38,7 +38,7 @@ Adaptación de la API TheMovieDB de una API Rest a una API de tipo GraphQL. Se i
 
 * [x] [Géneros](https://developers.themoviedb.org/3/genres) - Anartz
 * [X] [Descubrimientos](https://developers.themoviedb.org/3/discover) - Ruslan
-* [ ] [Certificaciones](https://developers.themoviedb.org/3/certifications) - Anartz
+* [X] [Certificaciones](https://developers.themoviedb.org/3/certifications) - Anartz
 * [ ] [Cambios](https://developers.themoviedb.org/3/changes) - Anartz
 
 ## Testing
@@ -46,7 +46,7 @@ Adaptación de la API TheMovieDB de una API Rest a una API de tipo GraphQL. Se i
 ### Schema GraphQL
 * [x] Géneros
 * [X] Descubrimientos
-* [ ] Certificaciones
+* [X] Certificaciones
 * [ ] Cambios
 
 ### Resolvers

@@ -2,9 +2,9 @@ const COMMON_RESPONSE = `
     certifications {
         code
         details {
-        meaning
-        order
-        certification
+          meaning
+          order
+          certification
         }
     }
 `;

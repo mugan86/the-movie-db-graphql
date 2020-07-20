@@ -1,0 +1,20 @@
+{
+  certificationMovie {
+    certifications {
+      ...CertificationObject
+    }
+  }
+  certificationTv {
+    certifications {
+      ...CertificationObject
+    }
+  }
+}
+fragment CertificationObject on Certification {
+  code
+  details {
+    meaning
+    order
+    certification
+  }
+}

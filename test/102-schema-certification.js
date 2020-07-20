@@ -26,7 +26,7 @@ describe("Test Schema GraphQL - Certification", () => {
       const query = `
                 {
                     {
-                        discoverMovie {
+                        certificationMovie {
                             id
                             originalName
                             originCountry
@@ -53,7 +53,7 @@ describe("Test Schema GraphQL - Certification", () => {
     it("Llamada 'certificationTv' inválida", () => {
         const query = `
         {
-            discoverTv {
+            certificationTv {
                 id
                 originalName
                 originCountry
