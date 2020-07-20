@@ -52,7 +52,7 @@ Adaptación de la API TheMovieDB de una API Rest a una API de tipo GraphQL. Se i
 ### Resolvers
 * [x] Géneros
 * [X] Descubrimientos
-* [ ] Certificaciones
+* [X] Certificaciones
 * [ ] Cambios
 
 ## Tools and references use to make conversion
