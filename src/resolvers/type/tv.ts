@@ -12,6 +12,7 @@ const typeTvResolvers: IResolvers =  {
         backdropPath: (parent) => parent.backdrop_path,
         voteAverage: (parent) => parent.vote_average,
         posterPath: (parent) => IMAGE_PATH(parent.poster_path),
+        releaseDate: (parent) => parent.release_date
     }
 }
 
