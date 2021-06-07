@@ -2,9 +2,9 @@ import { TheMovieDB } from "./the-movie-db";
 import { AUDIOVISUAL_TYPE } from "../config/constants";
 
 class Discover extends TheMovieDB {
-  async list(typeList: string) {
+  async list(typeList: string, page = 1) {
     return await this.get(
-      `discover/${typeList}?language=${this.selectLanguage}`,
+      `discover/${typeList}?language=${this.selectLanguage}&page=${page}`,
       {
         cacheOptions: { ttl: 60 },
       }

@@ -3,11 +3,11 @@ import { AUDIOVISUAL_TYPE } from "../../config/constants";
 
 const queryDiscoverResolvers: IResolvers = {
     Query: {
-        discoverMovie: async(_, __, { dataSources }) => {
-            return await dataSources.discover.list(AUDIOVISUAL_TYPE.MOVIE);
+        discoverMovie: async(_, {page}, { dataSources }) => {
+            return await dataSources.discover.list(AUDIOVISUAL_TYPE.MOVIE, page);
         },
-        discoverTv: async(_, __, { dataSources }) => {
-            return await (dataSources.discover.list(AUDIOVISUAL_TYPE.TV));
+        discoverTv: async(_, {page}, { dataSources }) => {
+            return await (dataSources.discover.list(AUDIOVISUAL_TYPE.TV, page));
         },
     }
 }

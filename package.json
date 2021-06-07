@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/mugan86/the-movie-db-graphql#readme",
   "dependencies": {
+    "@graphql-tools/merge": "^6.2.14",
     "apollo-datasource-rest": "^0.9.3",
     "apollo-server-express": "^2.15.1",
     "chai": "^4.2.0",
