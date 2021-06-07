@@ -21,3 +21,7 @@ export enum AUDIOVISUAL_TYPE {
     MOVIE = "movie",
     TV = "tv"
 }
+
+export const IMAGE_PATH = (image: string, size = 200) => {
+    return `https://image.tmdb.org/t/p/w${size}${image}`
+}

@@ -1,4 +1,4 @@
 type Query {
-    discoverMovie(page: Int = 1 ): ResultDiscover!
-    discoverTv(page: Int = 1 ): ResultDiscover!
+    discoverMovie(page: Int = 1, primaryYear: Int = -1): ResultDiscover!
+    discoverTv(page: Int = 1, primaryYear: Int = -1): ResultDiscover!
 }

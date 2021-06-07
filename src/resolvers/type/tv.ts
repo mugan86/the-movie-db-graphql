@@ -1,4 +1,5 @@
 import { IResolvers } from "graphql-tools";
+import { IMAGE_PATH } from "../../config/constants";
 
 const typeTvResolvers: IResolvers =  {
     Tv: {
@@ -10,7 +11,7 @@ const typeTvResolvers: IResolvers =  {
         firstAirDate: (parent) => parent.first_air_date,
         backdropPath: (parent) => parent.backdrop_path,
         voteAverage: (parent) => parent.vote_average,
-        posterPath: (parent) => parent.poster_path,
+        posterPath: (parent) => IMAGE_PATH(parent.poster_path),
     }
 }
 
