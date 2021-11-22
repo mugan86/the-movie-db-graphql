@@ -68,7 +68,7 @@
     "chai": "^4.3.4",
     "easygraphql-tester": "^6.0.1",
     "eslint": "^8.2.0",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "mocha": "^8.0.1",
     "nodemon": "^2.0.15",
     "ts-node": "^10.4.0"
