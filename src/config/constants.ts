@@ -27,3 +27,10 @@ export enum CHANGES_TYPES {
     TV = 'tv',
     PERSON = 'person'
 }
+
+export const IMAGE_PATH = (image: string, size = 200) => {
+    if (image === null || image === "" || image === undefined){
+        return "";
+    }
+    return `https://image.tmdb.org/t/p/w${size}${image}`
+}

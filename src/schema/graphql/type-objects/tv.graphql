@@ -12,4 +12,5 @@ type Tv {
   voteAverage: Float
   overview: String
   posterPath: String
+  releaseDate: String
 }
