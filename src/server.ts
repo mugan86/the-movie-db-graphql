@@ -1,3 +1,4 @@
+import expressPlayGround from 'graphql-playground-middleware-express';
 // Añadir los imports
 import { LANGUAGES } from './config/constants';
 import { ApolloServer } from 'apollo-server-express';
@@ -61,6 +62,13 @@ class GraphQLServer {
     });
 
     apolloServer.applyMiddleware({ app: this.app, cors: true });
+
+    this.app.use(
+      "/",
+      expressPlayGround({
+        endpoint: "/graphql",
+      })
+    );
 
   }
 
