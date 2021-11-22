@@ -40,6 +40,7 @@
   "homepage": "https://github.com/mugan86/the-movie-db-graphql#readme",
   "dependencies": {
     "@graphql-tools/load-files": "^6.5.2",
+    "@graphql-tools/merge": "^8.2.1",
     "apollo-datasource-rest": "^3.4.0",
     "apollo-server-express": "^2.15.1",
     "compression": "^1.7.4",
