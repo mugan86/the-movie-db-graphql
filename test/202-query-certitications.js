@@ -3,14 +3,10 @@
 const EasyGraphQLTester = require('easygraphql-tester');
 const resolvers = require('./mocks/resolvers/certification').resolverQueries;
 const operations = require('./mocks/operations/certification');
-const path = require('path');
-const { loadFilesSync } = require('@graphql-tools/load-files');
-const { mergeTypeDefs } = require('@graphql-tools/merge');
-
-const apiSchema = mergeTypeDefs(loadFilesSync(path.join(__dirname, './../src/schema/**/*.graphql')));
+const apiSchema = require('./../test/mocks/api');
 const expect = require('chai').expect;
 
-function analyzeData (certificationData) {
+const analyzeData = (certificationData) => {
     expect(certificationData.certifications).to.be.a('array');
 }
 

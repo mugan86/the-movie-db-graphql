@@ -1,15 +1,8 @@
 "use strict";
 
 const EasyGraphQLTester = require("easygraphql-tester");
-const path = require("path");
-const { loadFilesSync } = require("@graphql-tools/load-files");
-const { mergeTypeDefs } = require("@graphql-tools/merge");
-
 const operations = require('./mocks/operations/certification');
-
-const apiSchema = mergeTypeDefs(
-  loadFilesSync(path.join(__dirname, "./../src/schema/**/*.graphql"))
-);
+const apiSchema = require('./../test/mocks/api');
 
 // const tester =
 describe("Test Schema GraphQL - Certification", () => {

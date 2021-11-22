@@ -1,5 +1,5 @@
-import { TheMovieDB } from "./the-movie-db";
-import { AUDIOVISUAL_TYPE } from "../config/constants";
+import { TheMovieDB } from './the-movie-db';
+import { AUDIOVISUAL_TYPE } from '../config/constants';
 
 class Discover extends TheMovieDB {
   async list(typeList: string) {

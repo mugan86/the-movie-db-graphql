@@ -1,0 +1,4 @@
+type Change {
+    id: Int!
+    adult: Boolean
+}

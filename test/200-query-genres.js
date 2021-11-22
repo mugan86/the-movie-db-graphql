@@ -3,15 +3,10 @@
 const EasyGraphQLTester = require('easygraphql-tester');
 const resolvers = require('./mocks/resolvers/genres').resolverQueries;
 const operations = require('./mocks/operations/genres');
-const path = require('path');
-const { loadFilesSync } = require('@graphql-tools/load-files');
-const { mergeTypeDefs } = require('@graphql-tools/merge');
-const genres = require('./mocks/data/genres');
-
-const apiSchema = mergeTypeDefs(loadFilesSync(path.join(__dirname, './../src/schema/**/*.graphql')));
+const apiSchema = require('./../test/mocks/api');
 const expect = require('chai').expect;
 
-function analyzeData (genresData) {
+const analyzeData = (genresData) => {
     expect(genresData).to.be.a('array');
     genresData.map((genre) => {
         expect(genre.id).to.be.a('number');

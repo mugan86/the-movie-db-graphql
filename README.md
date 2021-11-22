@@ -55,7 +55,7 @@ Adaptación de la API TheMovieDB de una API Rest a una API de tipo GraphQL. Se i
 * [X] Certificaciones
 * [ ] Cambios
 
-## Tools and references use to make conversion
+## Herramientas y referencia para la conversión
 
 * [Apollo GraphQL (Datasources)](https://www.apollographql.com/docs/apollo-server/data/data-sources/)
 * [The MovieDB API](https://developers.themoviedb.org/3/getting-started/introduction)

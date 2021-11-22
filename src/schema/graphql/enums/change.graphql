@@ -1,0 +1,5 @@
+enum ChangeTypeEnum {
+    PERSON
+    MOVIE
+    TV
+}

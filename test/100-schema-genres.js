@@ -1,12 +1,8 @@
 'use strict';
 
 const EasyGraphQLTester = require('easygraphql-tester');
-const path = require('path');
-const { loadFilesSync } = require('@graphql-tools/load-files');
-const { mergeTypeDefs } = require('@graphql-tools/merge');
+const apiSchema = require('./../test/mocks/api');
 const operations = require('./mocks/operations/genres');
-
-const apiSchema = mergeTypeDefs(loadFilesSync(path.join(__dirname, './../src/schema/**/*.graphql')));
 
 // const tester =
 describe('Test Schema GraphQL - Genres', () => {

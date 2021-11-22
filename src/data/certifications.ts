@@ -1,4 +1,4 @@
-import { TheMovieDB } from "./the-movie-db";
+import { TheMovieDB } from './the-movie-db';
 
 class Certification extends TheMovieDB {
   async list(typeList: string) {
@@ -9,7 +9,7 @@ class Certification extends TheMovieDB {
       }
     ).then(
       (result: { certifications: object}) => {
-        return result.certifications
+        return result.certifications;
       }
     );
   }

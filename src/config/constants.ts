@@ -4,20 +4,26 @@
  * (Take ISO_639-1)
  */
 export enum LANGUAGES {
-    CHINESE = "zh",
-    ENGLISH = "en",
-    FRENCH = "fr",
-    GERMAN = "de",
-    GREEK = "el",
-    ITALIAN = "it",
-    JAPANESE = "ja",
-    POLISH = "pl",
-    PORTUGUESE = "pt",
-    RUSSIAN = "ru",
-    SPANISH = "es",
+    CHINESE = 'zh',
+    ENGLISH = 'en',
+    FRENCH = 'fr',
+    GERMAN = 'de',
+    GREEK = 'el',
+    ITALIAN = 'it',
+    JAPANESE = 'ja',
+    POLISH = 'pl',
+    PORTUGUESE = 'pt',
+    RUSSIAN = 'ru',
+    SPANISH = 'es',
 }
 
 export enum AUDIOVISUAL_TYPE {
-    MOVIE = "movie",
-    TV = "tv"
+    MOVIE = 'movie',
+    TV = 'tv'
+}
+
+export enum CHANGES_TYPES {
+    MOVIE = 'movie',
+    TV = 'tv',
+    PERSON = 'person'
 }

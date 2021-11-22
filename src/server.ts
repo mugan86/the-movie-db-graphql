@@ -1,61 +1,74 @@
 // Añadir los imports
-import { LANGUAGES } from "./config/constants";
-import express from "express";
-import compression from "compression";
-import cors from "cors";
-import schema from "./schema";
-import { ApolloServer } from "apollo-server-express";
-import { createServer } from "http";
-import environments from "./config/environments";
-import { dataSources } from "./data";
-import expressPlayGround from "graphql-playground-middleware-express";
-async function init() {
-  // Inicializar variables de entorno
-  if (process.env.NODE_ENV !== "production") {
-    const envs = environments;
-    console.log(envs);
+import { LANGUAGES } from './config/constants';
+import { ApolloServer } from 'apollo-server-express';
+import compression from 'compression';
+import express, { Application } from 'express';
+import { GraphQLSchema } from 'graphql';
+import { createServer, Server } from 'http';
+
+import environments from './config/environments';
+import { dataSources } from './data';
+
+class GraphQLServer {
+  private app!: Application;
+  private httpServer!: Server;
+  private readonly DEFAULT_PORT = (process.env.PORT) ? +process.env.PORT: 3025;
+  private schema!: GraphQLSchema;
+  private defaultLanguage = process.env.DEFAULT_LANGUAGE || LANGUAGES.ENGLISH;
+  constructor(schema: GraphQLSchema) {
+    if (schema === undefined) {
+      throw new Error(
+        'Necesitamos un schema de GraphQL para trabajar con APIs GraphQL'
+      );
+    }
+    this.schema = schema;
+    if (process.env.NODE_ENV !== 'production') {
+      const envs = environments;
+      console.log(envs);
+    }
+    this.init();
   }
 
-  // Inicializamos la aplicación express
-  const app = express();
+  private init() {
+    this.configExpress();
+    this.configApolloServerExpress();
+    // this.configRoutes();
+  }
 
-  // Añadimos configuración de Cors y compression
-  app.use("*", cors());
+  private configExpress() {
+    this.app = express();
 
-  app.use(compression());
+    this.app.use(compression());
 
-  // Default language
-  const defaultLanguage = process.env.DEFAULT_LANGUAGE || LANGUAGES.ENGLISH;
+    this.httpServer = createServer(this.app);
+  }
 
-  // Inicializamos el servidor de Apollo
-  const server = new ApolloServer({
-    schema: schema,
-    introspection: true, // Necesario,
-    dataSources: () => ({
-      // Aquí vamos a añadir las fuentes de los datos que usaremos
-      // para coger la información de la API TheMovieDB
-      people: new dataSources.People(defaultLanguage),
-      genre: new dataSources.Genre(defaultLanguage),
-      discover: new dataSources.Discover(defaultLanguage),
-      certification: new dataSources.Certification()
-    }),
-  });
+  private async configApolloServerExpress() {
+    
+   
+    const apolloServer = new ApolloServer({
+      schema: this.schema,
+      introspection: true,
+      dataSources: () => ({
+        // Aquí vamos a añadir las fuentes de los datos que usaremos
+        // para coger la información de la API TheMovieDB
+        people: new dataSources.People(this.defaultLanguage),
+        genre: new dataSources.Genre(this.defaultLanguage),
+        discover: new dataSources.Discover(this.defaultLanguage),
+        certification: new dataSources.Certification(),
+        changes: new dataSources.Change()
+      }),
+    });
 
-  server.applyMiddleware({ app });
+    apolloServer.applyMiddleware({ app: this.app, cors: true });
 
-  app.use(
-    "/",
-    expressPlayGround({
-      endpoint: "/graphql",
-    })
-  );
+  }
 
-  const PORT = process.env.PORT || 5000;
-  const httpServer = createServer(app);
-
-  httpServer.listen({ port: PORT }, (): void =>
-    console.log(`http://localhost:${PORT}/graphql`)
-  );
+  listen(callback: (port: number) => void): void {
+    this.httpServer.listen(+this.DEFAULT_PORT, () => {
+      callback(+this.DEFAULT_PORT);
+    });
+  }
 }
 
-init();
+export default GraphQLServer;
